@@ -1,0 +1,18 @@
+<div class ="container">
+<h1>All our Flats</h1>
+
+<div class="d-flex justify-content-between" style="width: 150rem;">
+  <% @flats.each do |flat| %>
+  <div class="card-body border m-3">
+  <img src="https://picsum.photos/id/283/3823/2538" class="card-img-top" alt="flat-image">
+  <h5 class="card-title"><%= flat.name %></h5>
+  <p class="card-text"><%= flat.description %></p>
+  <ul class="list-inline">
+    <li class="list-inline-item mr-4"><i class="fas fa-user-friends"> <%= flat.number_of_guests %></i></li>
+    <li class="list-inline-item"><i class="fas fa-euro-sign"> <%= flat.price_per_night %></i></li>
+   </ul>
+  <%= link_to "More info", flat_path(flat) %>
+  </div>
+  <% end %>
+</div>
+</div>
